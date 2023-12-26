@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href = "/service_set.css">
+  <title>SERVICE SET</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <h1><a href="/">SSP</a></h1>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="webcammonitor">
+      <img src="http://localhost:8000/service_set" width="600" />
+    </div>
+    <br/>
+    
+    <div class="sensormonitor">
+      <div class="first">
+        <table class="firstline">
+          <tr>
+            <thead>
+              <tr>
+                <th>10</th>
+                <th>12</th>
+                <th>14</th>
+                <th></th>
+                <th>16</th>
+                <th>18</th>
+                <th>20</th>
+              </tr>
+            </thead>
+            <td id="sensor10"></td>
+            <td id="sensor12"></td>
+            <td id="sensor14"></td>
+            <td></td>
+            <td id="sensor16"></td>
+            <td id="sensor18"></td>
+            <td id="sensor20"></td>
+          </tr>
+      </table></div>
+      <br>
+      <br>
+      <div class="second">
+        <table class="secondline">
+          <thead>
+            <tr>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>11</th>
+              <th>13</th>
+              <th>15</th>
+              <th>17</th>
+              <th>19</th>
+              <th>21</th>
+              <th>22</th>
+              <th>23</th>
+              <th>24</th>
+              <th>25</th>
+            </tr>
+          </thead>
+          <tr>
+            <td id="sensor5"></td>
+            <td id="sensor6"></td>
+            <td id="sensor7"></td>
+            <td id="sensor8"></td>
+            <td id="sensor9"></td>
+            <td id="sensor11"></td>
+            <td id="sensor13"></td>
+            <td id="sensor15"></td>
+            <td id="sensor17"></td>
+            <td id="sensor19"></td>
+            <td id="sensor21"></td>
+            <td id="sensor22"></td>
+            <td id="sensor23"></td>
+            <td id="sensor24"></td>
+            <td id="sensor25"></td>
+          </tr>
+      </table>
+      </div>
+      
+      <br>
+      <br>
+      <div class="third">
+        <table class="thirdline">
+          <thead>
+            <tr>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th></th>
+              <th></th>
+              <th>26</th>
+              <th>27</th>
+              <th>28</th>
+              <th>29</th>
+              <th>30</th>
+            </tr>
+          </thead>
+          <tr>
+            <td id="sensor0"></td>
+            <td id="sensor1"></td>
+            <td id="sensor2"></td>
+            <td id="sensor3"></td>
+            <td id="sensor4"></td>
+            <td></td>
+            <td></td>
+            <td id="sensor26"></td>
+            <td id="sensor27"></td>
+            <td id="sensor28"></td>
+            <td id="sensor29"></td>
+            <td id="sensor30"></td>
+          </tr>
+        </table> 
+      </div>
+       
+    </div>
+  </div>
+
+  <div class = "Btn">
+    <form id="form" action="http://localhost:8000/service_cap" method="GET">
+      <button type="submit" value="Button">촬영</button>
+    </form>
+  
+    <button type="submit" value="Button" onclick="startService()">시작</button>
+  </div>
+
+
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(e){
+      e.preventDefault()
+
+      const req = new XMLHttpRequest()
+      req.open("get", "http://localhost:8000/service_cap")
+      req.addEventListener("load", function(e){
+        console.log(req.response)
+        alert("캡처 완료")
+      })
+      req.send()
+    })
+  function startService() {
+    const req = new XMLHttpRequest()
+    req.addEventListener("load", function(e){
+      if (req.response === "true") {
+        location.href = 'service'
+      } else {
+        alert("촬영을 먼저 진행하세요")
+      }
+    })
+    req.open("get", "http://localhost:8000/service_start")
+    req.send()
+  }
+    
+  function fetchData() {
+    // Ajax를 사용하여 서버로 데이터 요청
+    fetch("/test_value", {
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // 받아온 데이터 처리
+        console.log(data);
+        // 여기에서 원하는 동작 수행
+        updateSensorData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }
+  
+  function updateSensorData(data) {
+    // data가 객체인지 확인
+    if (typeof data === 'object') {
+      // data의 각 key-value 쌍을 반복
+      for (const key in data) {
+        // key에 해당하는 셀의 ID를 구성
+        const cellId = 'sensor' + key;
+        
+        // 해당 ID를 가진 셀이 존재하는지 확인하고 값을 업데이트
+        const cell = document.getElementById(cellId);
+        if (cell) {
+          const sensorValue = parseFloat(data[key]);
+          cell.textContent = data[key];
+          if (sensorValue >= 50 && sensorValue < 100) {
+          cell.style.color = 'red';
+          }else if(sensorValue >=100 && sensorValue <150 ) {
+          cell.style.color = 'green';
+          }else if(sensorValue >=150 && sensorValue <200 ) {
+          cell.style.color = 'blue';
+          }else if(sensorValue >=200 && sensorValue <250 ) {
+          cell.style.color = 'yellow';
+          }else if(sensorValue >=250 && sensorValue <300 ) {
+          cell.style.color = 'skyblue';
+          }else {
+          cell.style.color = 'black'; // 기본 색상으로 복원
+        }
+
+        }
+      }
+    }
+  }
+
+  // 주기적으로 fetchData 함수를 호출하는 코드
+  setInterval(fetchData, 2000); // 2초마다 데이터 요청
+
+  // 최초에 한 번 fetchData 함수를 호출
+  fetchData();
+
+  </script>
+  <style>
+    .firstline{ border-collapse : collapse; }  /*이중선 제거*/
+    .firstline td{
+        width: 67.6px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid #000;
+        
+        vertical-align: top;   /* 위 */
+        vertical-align: bottom;   /* 아래 */
+        vertical-align: middle;   /* 가운데 */
+      }
+    .secondline{ border-collapse : collapse; }  /*이중선 제거*/
+    .secondline td{
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid #000;
+        
+        vertical-align: top;   /* 위 */
+        vertical-align: bottom;   /* 아래 */
+        vertical-align: middle;   /* 가운데 */
+      }
+    .thirdline{ border-collapse : collapse; }  /*이중선 제거*/
+    .thirdline td{
+        width: 38.2px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid #000;
+        
+        vertical-align: top;   /* 위 */
+        vertical-align: bottom;   /* 아래 */
+        vertical-align: middle;   /* 가운데 */
+      }
+    .webcammonitor{
+      float:left;
+    }
+    .sensormonitor{
+      float:right;
+    }
+    </style>
+</body>
+</html>

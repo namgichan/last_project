@@ -1,0 +1,218 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html{
+    div {
+        display: inline-block;
+    }
+}
+
+body{
+    min-height: 100vh;
+    max-width: 400vh;
+    margin: 0 auto;
+    position: relative;
+
+    h1 {
+        text-align: center;
+        align-items: center;    
+        margin-bottom: 50px; 
+    }
+
+    p {
+        margin: 10px;
+        font-size: 15px;
+    }
+
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("./images/daniel-mccullough-80VTQEkRh1c-unsplash.jpg");
+        background-size: cover;
+        background-repeat: no-repeat; 
+        background-position: center;
+        opacity: 0.8; /* 투명도 조절 */
+        z-index: -2; /* 배경 이미지를 content 뒤로 이동시켜 다른 요소들이 가려지지 않도록 함 */
+    }
+}
+
+header{
+    nav{
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem 5rem;
+        color: #f6f6f6;
+        .logo{
+            display: flex;
+            font-size: 55px;
+            font-weight: 600;
+            color: #f6f6f6;
+        }
+        
+        .menu_bar{
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            margin-top: 4%;
+        
+            li{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+a{
+    text-decoration: none;
+    color: #f6f6f6;
+}
+
+// header{
+//     margin: 0;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+
+//     h1{
+//         color:white;
+//         font-size: 60px;
+//         text-align: center;
+//         margin-bottom: 50px;
+//     }
+     
+//     .container{
+//         width: 100%;
+//         height: auto;
+//         justify-content: space-between;
+
+//         i{
+//             color: white;
+//             font-size: 15px;
+//         }
+
+//         nav{
+//             float: right;
+//         } 
+//         ul{
+//             margin: 0;
+//             padding: 0;
+//             display: flex;
+//             li{
+//                 list-style: none;
+//                 margin-right: 10px;
+//             }
+//         }
+        
+//         .menu_bar{
+//             float: right;
+//             margin-top: 10px;
+//         }
+    
+//         a{
+//             float: right;
+//             display: block;
+//             text-align: center;
+//             margin: 0.25rem;
+//             color: white;
+//             padding: 0.25rem;
+//             text-decoration: none; 
+//         }
+//     }
+// }
+
+.b-wrap{
+    border: none;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 550px;
+    min-width: 330px;
+    height: 65vh;
+    display: flex;
+    // position : absolute;
+    // top:25%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: auto; /*중앙 정렬을 위해 추가*/
+    margin-top: 20px;
+
+    form{
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1{
+        font-size: 50px;
+        margin-top: -50px;
+        margin-bottom: 70px;
+    }
+
+    .btn{
+        border: none;
+        border-radius: 8px;
+        background-color: rgb(158, 158, 158);
+        font-weight: bold;
+        color: whitesmoke;
+        font-size: 15px;
+        width: 130px;
+        height: auto;
+        justify-content: center;
+        margin-top: 15px;
+        margin-left: 35px;
+        align-items: center;
+    }
+
+    .login{
+        margin-left: 17px;
+        width: 180px;
+        height: 28px;
+    }
+
+    .joinus{
+        font-size: 15px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .sign-in{
+        text-decoration: none;
+    }
+
+    .a{
+        text-decoration: none;
+        color: #2e2c2c;
+    }
+}
+
+
+@media screen and (max-width:780px){
+    .b-wrap {
+        height: 58vh; /* 변경된 부분 */
+        margin-top: 10px; /* 변경된 부분 */
+        margin-bottom: 10px; /* 변경된 부분 */
+
+        h1{
+            margin: auto;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+
+/* @supports (display: ;) */
