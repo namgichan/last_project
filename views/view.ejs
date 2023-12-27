@@ -13,7 +13,7 @@
 </head>
 <body>
   <header>
-    <nav clas="nav-bar">
+    <nav class="nav-bar">
       <div class="logo">
           <h1> <a href="/">SSP</a></h1>
       </div>
@@ -28,15 +28,17 @@
 <div class="container">
   <div class="co-head">
     <div class="wrap">
-      <a style="cursor: pointer;" onclick="history.back();">이전으로</a>
+      <!-- <a style="cursor: pointer;" id="goback">이전으로</a> -->
     </div>  
       <% data.forEach(function (item, index) { %>
     <div class="pre">
       <tr>
+        <td><a href="/list/<%= Math.floor((item.num - 1) / 5) + 1 %>">이전으로</a></td>
         <td><a href="/delete/<%= item.num%>">삭제</a></td>
         <td><a href="/edit/<%= item.num %>">편집</a></td>
       </tr>
     </div>
+    
   </div>
 
   <br>
@@ -65,9 +67,9 @@
         <p class ="in-content">
           <%= item.content %>
         </p>
-
+        <% }); %>
     </div>
-      <% }); %>
+
   
 </div>
 </body>

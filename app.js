@@ -16,13 +16,12 @@ const wr = require('./Router/write');
 const ed = require('./Router/edit');
 const del = require('./Router/delete');
 const vi = require('./Router/view');
+const mau = require('./Router/about')
 const service_set = require('./Router/service_set')
 const service = require('./Router/service')
 
 
 const app = express();
-
-// MySQL 연결 설정
 
 app.use(express.static('public'));
 // 세션 미들웨어 설정
@@ -63,6 +62,7 @@ app.use('', del);
 app.use('', vi);
 app.use('',service_set);
 app.use('',service);
+app.use('',mau);
 
 // 커넥트 이벤트 핸들링
 client.on("connect", () => { 
