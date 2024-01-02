@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$-m-text-color : #f6f6f6;
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    max-width: 400vh;
+    margin: 0 auto;
+    background: linear-gradient(336deg, rgba(168, 155, 155, 0.8), rgb(71, 71, 71) 70.71%);
+    position: relative;
+    transition: background-color .5s;
+}
+
+a{
+    text-decoration: none !important;
+    color: $-m-text-color !important;
+
+    :hover:hover{
+        color: $-m-text-color !important;
+    }
+}
+
+header{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 160px;
+    z-index: 999999;
+
+    nav{
+        width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        padding: 2.4rem 5rem !important;
+    
+        .logo{
+            font-size: 55px;
+            font-weight: 600;
+            color : $-m-text-color;
+
+            h1 a{
+                font-size: 82.5px !important;
+                font-weight: 600 !important;
+            }
+        } 
+    }
+}
+
+.container{
+    width: 1400px;
+    height: 58vh;
+
+    img{
+        border-radius: 8px;
+        border: 5px solid #f6f6f6;
+    }
+
+}
+
+.sensormonitor{
+    background-color: #f6f6f6;
+    width: 600px;
+    height: 42vh;
+    justify-content: space-around;
+    display: grid;
+    align-content: space-evenly;
+    align-items: center;
+    justify-items: center;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+th{
+    text-align: center;
+}
+
+.Btn{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 200px;
+    font-size: 20px;
+    
+    .submitbtn{
+        width: 95px;
+        height: 3rem;
+        border: none;
+        border-radius: 20px;
+    }
+}
+
+.submitbtn:hover{
+    color: #f9f9f9;
+    background-color: #5555;
+}
+
+.submitbtn:active{
+    color: #f9f9f9;
+    background-color: bisque;
+}
+
+@media (max-width:850px) {
+    html{
+        min-width: 850px;
+        width: 100%;
+        height: 100%;
+    }
+
+    body{
+        width: 100%;
+        
+    }
+
+    .container{
+        display: inline-block;
+    }
+
+    img{
+        width: 500px;
+        margin: auto;
+    }
+
+    .sensormonitor{
+        width: 80%;
+        margin: auto;
+    }
+
+}

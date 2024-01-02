@@ -50,4 +50,75 @@ header nav .logo {
 header nav .logo h1 a {
   font-size: 82.5px !important;
   font-weight: 600 !important;
+}
+
+.container {
+  width: 1400px;
+  height: 58vh;
+}
+.container img {
+  border-radius: 8px;
+  border: 5px solid #f6f6f6;
+}
+
+.sensormonitor {
+  background-color: #f6f6f6;
+  width: 600px;
+  height: 42vh;
+  justify-content: space-around;
+  display: grid;
+  align-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+th {
+  text-align: center;
+}
+
+.Btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 200px;
+  font-size: 20px;
+}
+.Btn .submitbtn {
+  width: 95px;
+  height: 3rem;
+  border: none;
+  border-radius: 20px;
+}
+
+.submitbtn:hover {
+  color: #f9f9f9;
+  background-color: rgba(85, 85, 85, 0.3333333333);
+}
+
+.submitbtn:active {
+  color: #f9f9f9;
+  background-color: bisque;
+}
+
+@media (max-width: 850px) {
+  html {
+    min-width: 850px;
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    width: 100%;
+  }
+  .container {
+    display: inline-block;
+  }
+  img {
+    width: 500px;
+    margin: auto;
+  }
+  .sensormonitor {
+    width: 80%;
+    margin: auto;
+  }
 }/*# sourceMappingURL=service_set.css.map */

@@ -24,6 +24,8 @@
     <br/>
     
     <div class="sensormonitor">
+
+      <h2>센서 수치</h2>
       <div class="first">
         <table class="firstline">
           <tr>
@@ -132,15 +134,16 @@
 
   <div class = "Btn">
     <form id="form" action="http://localhost:8000/service_cap" method="GET">
-      <button type="submit" value="Button">촬영</button>
+      <button class="submitbtn" type="submit" value="Button">촬영</button>
     </form>
   
-    <button type="submit" value="Button" onclick="startService()">시작</button>
+    <button class="submitbtn" type="submit" value="Button" onclick="startService()">시작</button>
   </div>
 
 
 
   <script>
+ 
     document.getElementById("form").addEventListener("submit", function(e){
       e.preventDefault()
 
@@ -195,21 +198,109 @@
         if (cell) {
           const sensorValue = parseFloat(data[key]);
           cell.textContent = data[key];
-          if (sensorValue >= 50 && sensorValue < 100) {
-          cell.style.color = 'red';
-          }else if(sensorValue >=100 && sensorValue <150 ) {
-          cell.style.color = 'green';
-          }else if(sensorValue >=150 && sensorValue <200 ) {
-          cell.style.color = 'blue';
-          }else if(sensorValue >=200 && sensorValue <250 ) {
-          cell.style.color = 'yellow';
-          }else if(sensorValue >=250 && sensorValue <300 ) {
-          cell.style.color = 'skyblue';
-          }else {
-          cell.style.color = 'black'; // 기본 색상으로 복원
-        }
 
+          const hue = 180 - (sensorValue * 180 / 220);
+          cell.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+          cell.style.color = `hsl(${(hue + 180) % 360}, 100%, 50%)`;
         }
+        const  seatValues_Row0 = new Array(6);
+        const  seatValues_Row1 = new Array(15);
+        const  seatValues_Row2 = new Array(10);
+                //console.log("key",key);
+        const packet_data = data;
+        seatValues_Row0[0] = packet_data[10];
+        seatValues_Row0[1] = packet_data[12];
+        seatValues_Row0[2] = packet_data[14];
+        seatValues_Row0[3] = packet_data[16];
+        seatValues_Row0[4] = packet_data[18];
+        seatValues_Row0[5] = packet_data[20];
+      
+        seatValues_Row1[0] = packet_data[5];
+        seatValues_Row1[1] = packet_data[6];
+        seatValues_Row1[2] = packet_data[7];  
+        seatValues_Row1[3] = packet_data[8];
+        seatValues_Row1[4] = packet_data[9];
+        seatValues_Row1[5] = packet_data[11];
+        seatValues_Row1[6] = packet_data[13];
+        seatValues_Row1[7] = packet_data[15];
+        seatValues_Row1[8] = packet_data[17];
+        seatValues_Row1[9] = packet_data[19];
+        seatValues_Row1[10] = packet_data[21];
+        seatValues_Row1[11] = packet_data[22];
+        seatValues_Row1[12] = packet_data[23];
+        seatValues_Row1[13] = packet_data[24];
+        seatValues_Row1[14] = packet_data[25];
+      
+        seatValues_Row2[0] = packet_data[0];
+        seatValues_Row2[1] = packet_data[1];
+        seatValues_Row2[2] = packet_data[2];
+        seatValues_Row2[3] = packet_data[3];
+        seatValues_Row2[4] = packet_data[4];
+        seatValues_Row2[5] = packet_data[26];
+        seatValues_Row2[6] = packet_data[27];
+        seatValues_Row2[7] = packet_data[28];
+        seatValues_Row2[8] = packet_data[29];
+        seatValues_Row2[9] = packet_data[30];    
+        
+        //console.log("row0",seatValues_Row0);//0.14
+        //console.log("row1",seatValues_Row1);//0.6
+        //console.log("row2",seatValues_Row2);//0.10
+        const originalMinValue = 0;
+      
+
+// 무게 중심을 저장할 변수 초기화
+/*
+let weightedSum = 0;
+let totalWeight = 0;
+
+// 각 좌표에 대해 무게 중심 계산
+for (let i = 0; i < seatValues_Row1.length; i++) {
+  const coordinate = seatValues_Row1[i];
+  const weight = i + 1; // 예시로 각 좌표에 대한 가중치를 좌표의 인덱스로 설정
+
+  weightedSum += coordinate * weight;
+  totalWeight += weight;
+}
+
+// 무게 중심 계산
+const weightedMean = weightedSum / totalWeight;
+
+console.log("Weighted Mean of seatValues_Row1:", weightedMean);
+*/
+let weightedSum_0 = 0;
+let totalWeight_0 = 0;
+let weightedSum_1 = 0;
+let totalWeight_1 = 0;
+let weightedSum_2 = 0;
+let totalWeight_2 = 0;
+// 각 좌표에 대해 무게 중심 계산
+for (let i = 0; i < seatValues_Row0.length; i++) {
+  const coordinate0 = seatValues_Row0[i];
+  const xCoordinate0 = (i+0.5) - (seatValues_Row0.length/2); 
+  weightedSum_0 += coordinate0 * xCoordinate0; 
+  totalWeight_0 += coordinate0;
+}
+for (let i = 0; i < seatValues_Row1.length; i++) {
+  const coordinate1 = seatValues_Row1[i];
+  const xCoordinate1 = (i+0.5) - (seatValues_Row1.length/2); 
+  weightedSum_1 += coordinate1 * xCoordinate1; 
+  totalWeight_1 += coordinate1;
+}
+for (let i = 0; i < seatValues_Row2.length; i++) {
+  const coordinate2 = seatValues_Row2[i];
+  const xCoordinate2 = (i+0.5) - (seatValues_Row2.length/2); 
+  weightedSum_2 += coordinate2 * xCoordinate2; 
+  totalWeight_2 += coordinate2;
+}
+
+// 무게 중심 계산
+const weightedMean0 = (weightedSum_0 / totalWeight_0)/3;
+const weightedMean1 = (weightedSum_1 / totalWeight_1)/7;
+const weightedMean2 = (weightedSum_2 / totalWeight_2)/5;
+
+console.log("Weighted Mean of seatValues_Row0:", weightedMean0); 
+console.log("Weighted Mean of seatValues_Row1:", weightedMean1);
+console.log("Weighted Mean of seatValues_Row2:", weightedMean2);     
       }
     }
   }

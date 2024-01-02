@@ -3,11 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/service.css">
   <title>SERVICE</title>
 </head>
 <body>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1><a href="/">SSP</a></h1>
+      </div>
 
-  <img src="http://localhost:8000/service" width="700" />
+      <ul class="menu_bar">
+        <li><a href="/list/1">게시판</a></li>
+        <li><a href="/">메인으로</a></li>
+        <li><a href="/service_set">다시 찍기?</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <div class="container">
+    <div class="select">
+      <h2>당신의 자세</h2>
+    </div>
+    <div class = "webcam">
+      <img src="http://localhost:8000/service" width="600" />
+
+       
+    <div class="sensormonitor">
+
+      <h2>센서 수치</h2>
+      <div class="first">
+        <table class="firstline">
+          <tr>
+            <thead>
+              <tr>
+                <th>10</th>
+                <th>12</th>
+                <th>14</th>
+                <th></th>
+                <th>16</th>
+                <th>18</th>
+                <th>20</th>
+              </tr>
+            </thead>
+            <td id="sensor10"></td>
+            <td id="sensor12"></td>
+            <td id="sensor14"></td>
+            <td></td>
+            <td id="sensor16"></td>
+            <td id="sensor18"></td>
+            <td id="sensor20"></td>
+          </tr>
+      </table></div>
+      <br>
+      <br>
+      <div class="second">
+        <table class="secondline">
+          <thead>
+            <tr>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>11</th>
+              <th>13</th>
+              <th>15</th>
+              <th>17</th>
+              <th>19</th>
+              <th>21</th>
+              <th>22</th>
+              <th>23</th>
+              <th>24</th>
+              <th>25</th>
+            </tr>
+          </thead>
+          <tr>
+            <td id="sensor5"></td>
+            <td id="sensor6"></td>
+            <td id="sensor7"></td>
+            <td id="sensor8"></td>
+            <td id="sensor9"></td>
+            <td id="sensor11"></td>
+            <td id="sensor13"></td>
+            <td id="sensor15"></td>
+            <td id="sensor17"></td>
+            <td id="sensor19"></td>
+            <td id="sensor21"></td>
+            <td id="sensor22"></td>
+            <td id="sensor23"></td>
+            <td id="sensor24"></td>
+            <td id="sensor25"></td>
+          </tr>
+      </table>
+      </div>
+      
+      <br>
+      <br>
+      <div class="third">
+        <table class="thirdline">
+          <thead>
+            <tr>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th></th>
+              <th></th>
+              <th>26</th>
+              <th>27</th>
+              <th>28</th>
+              <th>29</th>
+              <th>30</th>
+            </tr>
+          </thead>
+          <tr>
+            <td id="sensor0"></td>
+            <td id="sensor1"></td>
+            <td id="sensor2"></td>
+            <td id="sensor3"></td>
+            <td id="sensor4"></td>
+            <td></td>
+            <td></td>
+            <td id="sensor26"></td>
+            <td id="sensor27"></td>
+            <td id="sensor28"></td>
+            <td id="sensor29"></td>
+            <td id="sensor30"></td>
+          </tr>
+        </table> 
+      </div>
+       
+    </div>
+    </div>
+  </div>
+
+  <script>
+    function fetchData() {
+    // Ajax를 사용하여 서버로 데이터 요청
+    fetch("/test_value", {
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // 받아온 데이터 처리
+        console.log(data);
+        // 여기에서 원하는 동작 수행
+        updateSensorData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }
+    /*
+    
+    */
+    function updateSensorData(data) {
+    // data가 객체인지 확인
+    if (typeof data === 'object') {
+      // data의 각 key-value 쌍을 반복
+      for (const key in data) {
+        // key에 해당하는 셀의 ID를 구성
+        const cellId = 'sensor' + key;
+        
+        // 해당 ID를 가진 셀이 존재하는지 확인하고 값을 업데이트
+        const cell = document.getElementById(cellId);
+        if (cell) {
+          const sensorValue = parseFloat(data[key]);
+          cell.textContent = data[key];
+
+          const hue = 180 - (sensorValue * 180 / 220);
+          cell.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+          cell.style.color = `hsl(${(hue + 180) % 360}, 100%, 50%)`;
+    
+
+        }
+        const  seatValues_Row0 = new Array(6);
+        const  seatValues_Row1 = new Array(15);
+        const  seatValues_Row2 = new Array(10);
+                //console.log("key",key);
+        const packet_data = data;
+        seatValues_Row0[0] = packet_data[10];
+        seatValues_Row0[1] = packet_data[12];
+        seatValues_Row0[2] = packet_data[14];
+        seatValues_Row0[3] = packet_data[16];
+        seatValues_Row0[4] = packet_data[18];
+        seatValues_Row0[5] = packet_data[20];
+      
+        seatValues_Row1[0] = packet_data[5];
+        seatValues_Row1[1] = packet_data[6];
+        seatValues_Row1[2] = packet_data[7];  
+        seatValues_Row1[3] = packet_data[8];
+        seatValues_Row1[4] = packet_data[9];
+        seatValues_Row1[5] = packet_data[11];
+        seatValues_Row1[6] = packet_data[13];
+        seatValues_Row1[7] = packet_data[15];
+        seatValues_Row1[8] = packet_data[17];
+        seatValues_Row1[9] = packet_data[19];
+        seatValues_Row1[10] = packet_data[21];
+        seatValues_Row1[11] = packet_data[22];
+        seatValues_Row1[12] = packet_data[23];
+        seatValues_Row1[13] = packet_data[24];
+        seatValues_Row1[14] = packet_data[25];
+      
+        seatValues_Row2[0] = packet_data[0];
+        seatValues_Row2[1] = packet_data[1];
+        seatValues_Row2[2] = packet_data[2];
+        seatValues_Row2[3] = packet_data[3];
+        seatValues_Row2[4] = packet_data[4];
+        seatValues_Row2[5] = packet_data[26];
+        seatValues_Row2[6] = packet_data[27];
+        seatValues_Row2[7] = packet_data[28];
+        seatValues_Row2[8] = packet_data[29];
+        seatValues_Row2[9] = packet_data[30];    
+        
+
+       // const originalMinValue = 0;
+
+        let weightedSum_0 = 0;
+        let totalWeight_0 = 0;
+        let weightedSum_1 = 0;
+        let totalWeight_1 = 0;
+        let weightedSum_2 = 0;
+        let totalWeight_2 = 0;
+        // 각 좌표에 대해 무게 중심 계산
+        for (let i = 0; i < seatValues_Row0.length; i++) {
+          const coordinate0 = seatValues_Row0[i];
+          const xCoordinate0 = (i+0.5) - (seatValues_Row0.length/2); 
+          weightedSum_0 += coordinate0 * xCoordinate0; 
+          totalWeight_0 += coordinate0;
+        }
+        for (let i = 0; i < seatValues_Row1.length; i++) {
+          const coordinate1 = seatValues_Row1[i];
+          const xCoordinate1 = (i+0.5) - (seatValues_Row1.length/2); 
+          weightedSum_1 += coordinate1 * xCoordinate1; 
+          totalWeight_1 += coordinate1;
+        }
+        for (let i = 0; i < seatValues_Row2.length; i++) {
+          const coordinate2 = seatValues_Row2[i];
+          const xCoordinate2 = (i+0.5) - (seatValues_Row2.length/2); 
+          weightedSum_2 += coordinate2 * xCoordinate2; 
+          totalWeight_2 += coordinate2;
+        }
+
+        // 무게 중심 계산
+        const weightedMean0 = (weightedSum_0 / totalWeight_0)/2.5;
+        const weightedMean1 = (weightedSum_1 / totalWeight_1)/7;
+        const weightedMean2 = (weightedSum_2 / totalWeight_2)/4.5;
+
+        console.log("Weighted Mean of seatValues_Row0:", weightedMean0); 
+        console.log("Weighted Mean of seatValues_Row1:", weightedMean1);
+        console.log("Weighted Mean of seatValues_Row2:", weightedMean2);     
+              }
+            }
+          }
+
+
+  
+  // 주기적으로 fetchData 함수를 호출하는 코드
+  setInterval(fetchData, 2000); // 2초마다 데이터 요청
+
+  // 최초에 한 번 fetchData 함수를 호출
+  fetchData();
+  </script>
+  
 </body>
 </html>

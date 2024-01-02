@@ -20,8 +20,11 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: #f6f6f6;
+  text-decoration: none !important;
+  color: #f6f6f6 !important;
+}
+a :hover:hover {
+  color: #f6f6f6 !important;
 }
 
 header {
@@ -29,6 +32,7 @@ header {
   display: flex;
   width: 100%;
   height: 160px;
+  z-index: 999999;
 }
 header nav {
   width: 100%;
@@ -36,12 +40,17 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5rem;
+  text-decoration: none;
+  padding: 2.4rem 5rem !important;
 }
 header nav .logo {
   font-size: 55px;
   font-weight: 600;
   color: #f6f6f6;
+}
+header nav .logo h1 a {
+  font-size: 82.5px !important;
+  font-weight: 600 !important;
 }
 header nav .menu_bar {
   display: flex;
@@ -49,9 +58,21 @@ header nav .menu_bar {
   list-style: none;
   align-items: start;
   justify-content: space-between;
+  margin: 0 32px !important;
 }
 header nav li:hover {
   color: rgb(77, 54, 54);
+}
+
+.nav-bar .menu_bar a:hover,
+.pagination a.page-link:hover {
+  color: #f6f6f6 !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.logo a:hover {
+  color: #f6f6f6 !important;
 }
 
 section {
@@ -69,23 +90,29 @@ section {
   justify-content: center;
   padding: 4rem 4rem;
   margin: auto;
-  top: -18vh;
+  top: -12vh;
   border-radius: 8px;
   position: relative;
-  right: 22vh;
+  right: 8vh;
   flex-direction: column;
 }
 .box-1 #ti {
   font-size: 60px;
+  font-weight: 800;
+  text-align: left;
 }
 .box-1 .light img {
   max-width: 350px;
   max-height: 700px;
   position: absolute;
   top: 22%;
-  right: 2%;
+  right: 8%;
 }
 .box-1 h1 {
+  margin-top: 10px;
+  text-align: left;
+}
+.box-1 p {
   margin-top: 10px;
   text-align: left;
 }
@@ -139,6 +166,50 @@ section {
   transition: 0.5s;
 }
 
+.moremodal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  color: #202020;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 45px;
+  width: 80% !important;
+  height: 65vh;
+  border: 1px solid #888;
+  width: 80%;
+  top: -8%;
+}
+.modal-content .modal-body .set {
+  color: red !important;
+  font-weight: 800;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end !important;
+}
+.modal-header .closeBtn {
+  color: #464646;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal-header .closeBtn:hover,
+.modal-header .closeBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .box-2 {
   display: flex;
   width: 100%;
@@ -153,6 +224,7 @@ section {
 .box-2 h1 {
   text-align: center;
   font-size: 55px;
+  font-weight: 800;
   padding: 2px;
   margin: 20px auto;
 }
@@ -163,6 +235,7 @@ section {
   width: 95%;
   height: 50vh;
   border: none;
+  margin-left: 15%;
 }
 .box-2 .intro .web {
   margin: 20px 0;
@@ -174,55 +247,12 @@ section {
   width: 350px;
   height: 350px;
   top: 18vh;
-  right: 20%;
+  right: 15%;
+  margin-right: 5%;
 }
 .box-2 .p-1 {
   text-align: start;
   font-size: 20px;
-}
-.box-2 .serBtn {
-  font-size: 15px;
-  border: none;
-  border-radius: 40px;
-  width: 9rem;
-  height: 3rem;
-  display: flex;
-  margin-top: -10%;
-  margin-left: 18%;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s;
-  box-shadow: 2px 2px 2px 2px #f6f6f6;
-  cursor: pointer;
-}
-.box-2 .serBtn:hover {
-  color: #f6f6f6;
-  background-color: #666;
-}
-.box-2 .serBtn:hover span {
-  padding-right: 25px;
-}
-.box-2 .serBtn:hover span::after {
-  opacity: 1;
-  right: 0;
-}
-.box-2 .serBtn:active {
-  color: #ecebe5;
-  background-color: #7cadec;
-}
-.box-2 .serBtn span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-.box-2 .serBtn span::after {
-  content: "»";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
 }
 
 .box-3 {
@@ -240,6 +270,10 @@ section {
   font-size: 55px;
   padding: 2px;
   margin: 20px auto;
+  font-weight: 600;
+}
+.box-3 p {
+  margin: 80px auto;
 }
 .box-3 .mid-container {
   display: flex;
@@ -349,9 +383,9 @@ section {
   box-shadow: 2px #f6f6f6;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 785px) {
   html {
-    min-width: 800px;
+    min-width: 850px;
   }
   .nav-bar {
     flex-direction: column;
@@ -364,15 +398,50 @@ section {
   .menu_bar {
     flex-direction: column;
     align-items: flex-start;
-    list-style: none;
-    width: 100%;
     padding-left: 0;
+    position: absolute;
+    top: 160px; /* 조절하여 메뉴 위치 조정 */
+    left: 0;
+    background-color: rgba(49, 49, 49, 0.431372549);
+    display: none;
+    width: 30%;
+    height: auto;
+    padding: 2%;
+    border: none;
+    border-radius: 12px;
+  }
+  .menu_item {
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  .nav-bar:hover .menu_bar {
+    display: flex;
   }
   .box-1 {
-    width: 90%;
+    width: 760px;
     padding: 0 5%;
-    margin-top: 320px;
-    left: -20%;
+  }
+  .box-2 {
+    width: 760px;
+    padding: 0 5%;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 95%;
+    height: 18vh;
+    border: none;
+  }
+  .box-3 {
+    width: 760px;
+    padding: 0 5%;
+  }
+  .box-3 p {
+    margin-left: -10vh;
   }
   img {
     max-width: 150px;
@@ -380,6 +449,10 @@ section {
     top: 8%;
     right: 1%;
     opacity: 0;
+  }
+  .box-4 #p {
+    margin: auto;
+    margin-left: -17vh;
   }
   .num-1,
   .num-2,
@@ -391,6 +464,8 @@ section {
     max-width: 400px;
     width: 20rem;
     height: 30rem;
+    margin: auto;
+    margin-left: 20vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -398,6 +473,12 @@ section {
     text-align: center;
     border-radius: 8px;
     border: none;
+    opacity: 1;
+  }
+}
+@media (min-width: 750px) {
+  html {
+    width: 100%;
   }
 }
 @keyframes float {

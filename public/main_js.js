@@ -26,10 +26,13 @@ $(function() {
 		//options here
 		autoScrolling:true,
 		scrollHorizontally: true,
+        showActiveTooltip: true,
         navigation: true,
-        navigationPosition: 'right'
+        navigationPosition: 'right',
+        normalScrollElements: '.moremodal',
+        responsiveWidth: 900
     });
 
 	// //methods
-	// $.fn.fullpage.setAllowScrolling(false);
+	$.fn.fullpage.setAllowScrolling(true);
 });

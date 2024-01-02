@@ -1,4 +1,4 @@
-@charset "UTF-8";
+ @charset "UTF-8";
 
 *{
     box-sizing: border-box;
@@ -55,62 +55,43 @@ header{
     font-size: 23px;
 }
 
+
 form{
     width: 100%;
-    height: 80%;
     padding: 2rem;
-}
-
-.field{
     text-align: center;
     height: 65vh;
-
-    label{
-        font-weight: bold;
-        color: $-m-text-color;
-        font-size: 20px;
-    }
-}
-
-legend{
-    font-size: 50px;
-    border: none;
-    text-decoration: none;
-    text-align: center;
-}
-
-table,
-td {
-    border : none;
-}
-
-table{
-    width: 100%;
-    margin-top: 20px;
+    color: $-m-text-color;
+    align-items: center;
     justify-content: center;
 }
 
-td, 
-th{
-    padding: 14px;
+label{
     text-align: center;
+    font-size: 25px;
 }
 
-thead, tfoot{
-    background-color: #f6f6f6;
-    color: #333;
-}
+// thead, tfoot{
+//     background-color: #f6f6f6;
+//     color: #333;
+// }
 
 .sub-title{
-    width: 80%;
-    height: 2rem;
-    margin: 3%;
+    width: 70vh;
+    height: 3rem;
+    margin: 2%;
+    padding: 1%;
 }
 
 .form-control{
-    width: 80%;
+    width: 70vh;
     height: 20rem;
-    margin: 0 3%;
+    margin: 0 2%;
+    padding: 1%;
+}
+.con{
+    top: -280px;
+    position: relative;
 }
 
 .btn{

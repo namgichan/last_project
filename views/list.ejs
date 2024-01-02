@@ -26,7 +26,7 @@
       </div>
 
       <ul class = "menu_bar">
-        <li><a href="/">Home으로</a></li>
+        
         <li><a href=""></a></li>
         <li><a href="/logout">로그아웃</a></li>
       </ul>
@@ -41,9 +41,11 @@
   <div class="list">
     <h1 class="board">게시판</h1>
   </div>
+
   <div class="container">
     
-    <div class="wrap">  
+    <div class="wrap">
+
       <table border="1">
         <tr>
           <th>번호</th>
@@ -58,8 +60,10 @@
         </tr>
         <% }); %>
       </table>
+
       <br>
       <br>
+      
       <div class="container-mid">
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
@@ -90,6 +94,7 @@
             <% } %>  
           <% } %>
           <% if(curPage < totalPage){ %>
+            
             <li class="page-item">
               <a class="page-link" href="/list/<%= curPage + 1 %>">Next</a>
             </li>

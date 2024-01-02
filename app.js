@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const session = require('express-session');
+// const session = require('express-session');
 const path = require('path');
 const {sessionConfig } = require('./config');
 const mqtt = require("mqtt");
@@ -25,7 +25,7 @@ const app = express();
 
 app.use(express.static('public'));
 // 세션 미들웨어 설정
-app.use(session(sessionConfig));
+app.use(sessionConfig);
 
 // 바디 파싱
 app.use(bodyParser.json());

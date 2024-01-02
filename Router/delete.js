@@ -1,19 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
-const { mysqlConfig} = require('../config');
+const { mysqlConfig} = require('../config_ngc');
 const connection = mysql.createConnection(mysqlConfig);
 
 router.get('/delete/:num', (req, res) => {
 
-
-
   if(req.session.is_logined == true)
   {
-
-
-
-
     connection.query('DELETE FROM board WHERE num=?', [req.params.num], function (error, results, fields) {
       if (error) {
         console.error(error);

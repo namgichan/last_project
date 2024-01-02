@@ -24,25 +24,19 @@
 
   <div class="postpart">
     <form method="post">
-      <fieldset class="field">
-        <legend></legend>
 
-        <table>
-          <tr>
-            <td><label>subject</label></td>
-            <td><input class = "sub-title" type="text" name="subject" placeholder="제목을 입력해 주세요." /></td>
-          </tr>
-          <tr>
-            <div class="mb-3 mt-3">
-            <td><label>content</label></td>
-            <td><textarea class="form-control" rows="10" id="content" name="content" placeholder="내용을 입력해 주세요."></textarea></td>
-            </div>    
-          </tr>
-        </table>
+      <div class="mb-2 mt-2">
+        <label>subject</label>
+      <input class = "sub-title" type="text" name="subject" placeholder="제목을 입력해 주세요." />
+      </div>
+          
 
-        <button type="submit" class="btn">Submit</button>
-        
-      </fieldset>
+      <div class="mb-3 mt-3">
+        <label class="con">content</label>
+        <textarea class="form-control" rows="10" id="content" name="content" placeholder="내용을 입력해 주세요."></textarea>
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
     </form>
   </div>
 </body>

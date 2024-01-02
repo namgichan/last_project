@@ -60,6 +60,7 @@ header{
     margin-right: 20px;
     margin-bottom: 30px;
     max-width: 120vh;
+    gap: 9px;
 
     a{
         display: flex;
@@ -101,24 +102,31 @@ header{
         background-color: #f6f6f6;
     }
 
-.author,
-.title,
-.content {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto 0 45px;
-  margin-bottom: 10px;
-}
+    .author,
+    .title,
+    .content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 45px;
+    margin-bottom: 10px;
+    }
 
-label {
-  margin-bottom: 5px; /* label과 input 사이의 간격 조절 */
-}
-    
+    label {
+    margin-bottom: 5px; /* label과 input 사이의 간격 조절 */
+    }
+        
     #content{
         margin: 0 auto;
-        width: 90%;
-        height: 50vh;
+        width: 81vh;
+        height: 25vh;
         padding: 18px;
         border-radius: 6px;
+        resize: none;
     }
+}
+
+input{
+    height: 2rem;
+    border-radius: 6px;
+    padding: 1%;
 }

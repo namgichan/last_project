@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홈</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-    <!-- <script src="https://kit.fontawesome.com/354885cafc.js" crossorigin="anonymous"></script> -->
     <link rel = "stylesheet" href="/main.css">
     <link rel="stylesheet" href="/jquery.fullPage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>
+  
 </head> 
 <body> 
     <header>
@@ -56,13 +57,39 @@
                     </p>
                 </div>
                 <span>
-                    <button class = "moreBtn"><span>more</span></button>
+                    <button class = "moreBtn" id = "myBtn"><span>more</span></button>
                 </span>
                 <div class="light">
                     <img src="/images/pngwing.png" class="chair" alt="chair_png">
                 </div>
+                <div id="myModal" class="moremodal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="closeBtn">❌</span>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                이 프로젝트는 자세 교정을 위해 기안되었습니다. <br>
+                                웹 캠을 통해 자신의 자세를 확인하고 의자 센서를 통하여 <br>
+                                교정하고, 올바른 척추를 만들기 위하여 당신을 움직이게 합니다. <br>
+                                <br>
+                                웹캠 센서는 당신이 처음 보여준 자세와 의자 센서를 기본 정보로<br>
+                                어느 방향으로 무게가 가해지는지, 웹캠으로 보여지는 영상이 어떤 모습이<br>
+                                되는지 확인하실 수 있습니다. 
+                                <br>
+                                <br>
+                                로그인 후에 상단의 <span><a class="set" href="service_set">Service start</a></span>을 눌러 서비스를 이용해 보시길 바랍니다.
+
+
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+
             </div>
         </section>
+
 
         <section class="section">
             <div class="box-2">
@@ -78,9 +105,10 @@
                             바른 자세를 위해 경고하는 프로그램입니다.
                         </p>
                     </div>
-                    <span>
+                    <%#
+                    <!-- <span>
                         <button class="serBtn"><span>Service start</span></button>
-                    </span>
+                    </span> --> %>
                 </div>
                 <div class="img">
                     <img src="/images/white-chair.png">
@@ -92,15 +120,18 @@
             <div class="box-3">
                 <h1>올바른 자세 소개</h1>
                 <div class="mid-container">
-                    <div>
+                    <div class="longimg">
                         <img src="/images/seat_person.png">
-    
                     </div>
                     <div>
                         <p>
                             바른 자세는 이러합니다. <br>
                             당신은 이렇게 앉아서 화면을 보셔야 <br>
                             척추가 울지 않습니다.
+                        </p>
+                        <p>
+                            코어 힘을 주고 앉아 정면을 바라보시고 <br>
+                            웹캠을 응시하셔야 합니다.
                         </p>
                     </div>
                 </div>
@@ -123,9 +154,9 @@
                         <p class="in">
                             <span>contact</span> <br>
                             <span class="-c-ph">phon</span> <br>
-                            010-9110-0000<br>
+                            010-7109-6107 <br>
                             <span class="-c-em">email</span> <br>
-                            0000@gmail.com <br>
+                            ngc0328@gmail.com <br>
                         </p>
                         </div>
                     </div> 
@@ -147,41 +178,36 @@
 
                     <div class="num-3">
                         <p>조원2</p>
-                        <img src="/images/man.png" class="team-img">
+                        <img src="/images/newminsuc.png" class="team-img">
                         <div>
                             <p>양민석</p>
                         <p class="in">
                             <span>contact</span> <br>
                             <span class="-c-ph">phon</span> <br>
-                            010-9110-0000<br>
+                            010-8520-7664<br>
                             <span class="-c-em">email</span> <br>
-                            00000@gmail.com <br>
+                            day5274@naver.com<br>
                         </p>
                         </div>
                     </div>
 
                     <div class="num-4">
-                        <h3>조은자세조</h3>
+                        <h3>바른 자세조</h3>
                         <p>
                             바른 자세를 위하여 <br> 프로젝트를 구상한 <br> 
-                            <span>조은자세조</span>
+                            <span>바른 자세조</span>
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <p> footer</p>
-            <div class = "box-5">
-                프로젝트 footer을 넣을지 아니면 그냥 위를 contact us 나 가르쳐 달라는 부분 넣어도 될 듯?
-            </div>
-        </section>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="/jquery.fullPage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" integrity="sha512-0xW5KFMtT462F65vVvIejNawM1U2Fp/yhItmQVFUwdYP+R9tQFCn4QtLEhkp6RoGovZ6YCvbxy+GVCtGv0+nvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src = "/main_js.js"></script>
+    <script src="/modal.js"></script>   
     <!-- <script src= "/toggle.js"></script> -->
 </body>
 </html>

@@ -13,7 +13,7 @@
 </head>
 <body>
   <header>
-    <nav class="nav-bar">
+    <nav clas="nav-bar">
       <div class="logo">
           <h1> <a href="/">SSP</a></h1>
       </div>
@@ -28,32 +28,20 @@
 <div class="container">
   <div class="co-head">
     <div class="wrap">
-      <!-- <a style="cursor: pointer;" id="goback">이전으로</a> -->
-    </div>  
       <% data.forEach(function (item, index) { %>
+      <a href = "/list/<%= (item.num - 1)/5 + 1 %>">이전으로</a>
+      <a href="/list/1">게시판</a>
+    </div>  
+      
     <div class="pre">
-      <tr>
-        <td><a href="/list/<%= Math.floor((item.num - 1) / 5) + 1 %>">이전으로</a></td>
-        <td><a href="/delete/<%= item.num%>">삭제</a></td>
-        <td><a href="/edit/<%= item.num %>">편집</a></td>
-      </tr>
+      <a href="/delete/<%= item.num%>">삭제</a>
+      <a href="/edit/<%= item.num %>">편집</a>
     </div>
-    
   </div>
 
   <br>
   <br>
     <div class="content">
-      <!-- <br></br>
-      <th>글 번호 : </th><td><%= item.num %></td>
-      <br></br> 
-      <th>제목 : </th><td><%= item.subject %></td>
-      <br></br>
-      <th>작성자 : </th><td><%= item.author %></td>
-      <br></br>
-      <th>내용 </th><td><%= item.content %></td>
-      <br></br> -->
-
         <p class = "in-number"> 글 번호 : <%= item.num %></p>
         <br>
                   <p class="in-th">
@@ -67,9 +55,9 @@
         <p class ="in-content">
           <%= item.content %>
         </p>
-        <% }); %>
-    </div>
 
+    </div>
+      <% }); %>
   
 </div>
 </body>

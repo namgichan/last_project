@@ -69,6 +69,7 @@ header{
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
+
     .co-head{
         max-width: 1100px;
         display: flex;
@@ -83,6 +84,7 @@ header{
     justify-content: space-between;
     height: 30px;
     margin-left: 20px;
+    gap: 10px;
 
     a{
         display: flex;
@@ -102,6 +104,9 @@ header{
     text-align: center;
     padding: 7px;
     height: 42px;
+    position: relative;
+    right: -20%;
+
 
     a{
         color: rgb(7, 7, 7);

@@ -57,6 +57,7 @@ header nav .logo {
   margin-right: 20px;
   margin-bottom: 30px;
   max-width: 120vh;
+  gap: 9px;
 }
 .midBtn a {
   display: flex;
@@ -107,8 +108,15 @@ header nav .logo {
 }
 .container #content {
   margin: 0 auto;
-  width: 90%;
-  height: 50vh;
+  width: 81vh;
+  height: 25vh;
   padding: 18px;
   border-radius: 6px;
+  resize: none;
+}
+
+input {
+  height: 2rem;
+  border-radius: 6px;
+  padding: 1%;
 }/*# sourceMappingURL=edit.css.map */

@@ -44,7 +44,7 @@ void loop() {
   list_str += ']';
     Serial.println(list_str);
     list_str = "";
-  delay(10000);
+  delay(2000);
 }
  
 int readMux(int channel){

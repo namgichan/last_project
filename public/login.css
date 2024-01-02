@@ -93,17 +93,27 @@ a {
 }
 .b-wrap .btn {
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: rgb(158, 158, 158);
+  box-shadow: 2px 2px 2px 2px #726767;
   font-weight: bold;
   color: whitesmoke;
   font-size: 15px;
   width: 130px;
-  height: auto;
+  height: 2rem;
   justify-content: center;
   margin-top: 15px;
   margin-left: 2px;
   align-items: center;
+  cursor: pointer;
+}
+.b-wrap .btn:hover {
+  color: #726767;
+  background-color: #f6f6f6;
+}
+.b-wrap .btn:active {
+  color: #756f6f;
+  background-color: #9d9595;
 }
 .b-wrap .login {
   width: 180px;
