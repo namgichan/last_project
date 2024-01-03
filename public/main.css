@@ -33,6 +33,8 @@ header {
   width: 100%;
   height: 160px;
   z-index: 999999;
+  background-color: transparent;
+  font-family: "Merriweather", serif;
 }
 header nav {
   width: 100%;
@@ -97,7 +99,7 @@ section {
   flex-direction: column;
 }
 .box-1 #ti {
-  font-size: 60px;
+  font-size: 87px;
   font-weight: 800;
   text-align: left;
 }
@@ -115,6 +117,7 @@ section {
 .box-1 p {
   margin-top: 10px;
   text-align: left;
+  font-size: 18px;
 }
 .box-1 .span {
   font-size: 25px;
@@ -131,7 +134,7 @@ section {
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
-  margin-left: -11rem;
+  margin-left: -18rem;
   transition: all 0.5s;
   box-shadow: 2px 2px 2px 2px #f6f6f6;
   cursor: pointer;
@@ -228,6 +231,9 @@ section {
   padding: 2px;
   margin: 20px auto;
 }
+.box-2 p {
+  font-size: 18px;
+}
 .box-2 .intro {
   display: flex;
   flex-direction: column;
@@ -235,7 +241,7 @@ section {
   width: 95%;
   height: 50vh;
   border: none;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 .box-2 .intro .web {
   margin: 20px 0;
@@ -244,15 +250,16 @@ section {
 }
 .box-2 img {
   position: absolute;
-  width: 350px;
-  height: 350px;
-  top: 18vh;
-  right: 15%;
-  margin-right: 5%;
+  width: 400x;
+  height: 450px;
+  top: 2vh;
+  right: 25%;
 }
-.box-2 .p-1 {
+.box-2 .h2-1 {
   text-align: start;
-  font-size: 20px;
+  font-size: 55px;
+  font-family: "Merriweather", serif;
+  color: linear-gradient(to left top, #dae9fc, #925252);
 }
 
 .box-3 {
@@ -272,8 +279,14 @@ section {
   margin: 20px auto;
   font-weight: 600;
 }
+.box-3 h2 {
+  margin: 40px auto;
+  font-size: 65px;
+  font-family: "Merriweather", serif;
+}
 .box-3 p {
-  margin: 80px auto;
+  font-size: 18px;
+  margin: 60px 0 auto;
 }
 .box-3 .mid-container {
   display: flex;
@@ -292,11 +305,12 @@ section {
   font-weight: 600;
   background: linear-gradient(to right top, #eee, #f7fbff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 30px;
 }
 .box-4 p {
-  margin: 20px;
+  margin: 10px;
 }
 .box-4 .team-intro {
   display: flex;
@@ -378,6 +392,11 @@ section {
   display: none;
 }
 
+.p1 {
+  font-weight: 900;
+  font-size: 24px;
+}
+
 .team-img {
   animation: float 4s ease-in-out infinite;
   box-shadow: 2px #f6f6f6;
@@ -452,7 +471,7 @@ section {
   }
   .box-4 #p {
     margin: auto;
-    margin-left: -17vh;
+    margin-left: 10vh;
   }
   .num-1,
   .num-2,
@@ -473,7 +492,7 @@ section {
     text-align: center;
     border-radius: 8px;
     border: none;
-    opacity: 1;
+    opacity: zz;
   }
 }
 @media (min-width: 750px) {

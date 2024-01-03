@@ -63,7 +63,7 @@ header nav .menu_bar {
 
 .container {
   width: 1400px;
-  height: 58vh;
+  gap: 3rem;
 }
 .container h2 {
   color: #f6f6f6;
@@ -112,13 +112,14 @@ header nav .menu_bar {
   border-collapse: collapse;
 } /*이중선 제거*/
 .secondline td {
+
   width: 30px;
   height: 30px;
   text-align: center;
-  border: 1px solid #000;
-  vertical-align: top; /* 위 */
-  vertical-align: bottom; /* 아래 */
-  vertical-align: middle; /* 가운데 */
+  border: 1px solid #000;  
+  vertical-align: top;   /* 위 */
+  vertical-align: bottom;   /* 아래 */
+  vertical-align: middle;   /* 가운데 */
 }
 
 .thirdline {
@@ -129,9 +130,11 @@ header nav .menu_bar {
   height: 30px;
   text-align: center;
   border: 1px solid #000;
-  vertical-align: top; /* 위 */
-  vertical-align: bottom; /* 아래 */
-  vertical-align: middle; /* 가운데 */
+  background-color: black;
+  
+  vertical-align: top;   /* 위 */
+  vertical-align: bottom;   /* 아래 */
+  vertical-align: middle;   /* 가운데 */
 }
 
 .webcammonitor {
@@ -140,4 +143,13 @@ header nav .menu_bar {
 
 .sensormonitor {
   float: right;
-}/*# sourceMappingURL=service.css.map */
+}
+
+#seat_Image {
+  position: absolute;
+  margin: auto;
+  border: none;
+  border-radius: 50%;
+  left: 42%;
+  top: 62vh;
+}

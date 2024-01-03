@@ -7,7 +7,10 @@
     <title>홈</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href="/main.css">
-    <link rel="stylesheet" href="/jquery.fullPage.css">
+    <link rel= "stylesheet" href="/jquery.fullPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
@@ -38,7 +41,7 @@
     </header>
 
     <div id = "fullPage">
-        <section class="section">
+        <section class="section ">
             <div class="box-1">
                 <div class="title">
                     <h1 id="ti" class="moveti">프로젝트 소개</h1>
@@ -93,12 +96,12 @@
 
         <section class="section">
             <div class="box-2">
-                <div>
-                    <h1>자세 교정 기능 소개</h1>
-                </div>
                 <div class="intro">     
                     <div class = "web">
-                        <p class="p-1">webcam</p>
+                        <h2 class="h2-1">
+                            YOU CAN SEE <br> YOUR POSE, <br>
+                            YOU CAN CHECK <br> YOUR POSE.
+                        </h2>
                         <p>
                             SSP 프로젝트는 웹캠으로 인식한  <br>
                             사용자와의 거리, 자세를 인식하여 <br>
@@ -118,21 +121,25 @@
 
         <section class="section">
             <div class="box-3">
-                <h1>올바른 자세 소개</h1>
+                <!-- <h1>올바른 자세 소개</h1> -->
                 <div class="mid-container">
                     <div class="longimg">
                         <img src="/images/seat_person.png">
                     </div>
                     <div>
+                        <h2>CHECK YOUR <br> POSITION</h2>
+
                         <p>
-                            바른 자세는 이러합니다. <br>
-                            당신은 이렇게 앉아서 화면을 보셔야 <br>
-                            척추가 울지 않습니다.
+                            <strong>사용법</strong> <br>
+                            <br>
+                            의자에 앉아 정면을 바라보시고, <br>
+                            웹캠을 응시하셔야 합니다. <br>
+                            그 후에 현 자세를 촬영하시고 <br>
+                            시작을 눌러 센서가 당신의 중심을 <br>
+                            측정할 수 있게 해주세요.
+                            <br>
                         </p>
-                        <p>
-                            코어 힘을 주고 앉아 정면을 바라보시고 <br>
-                            웹캠을 응시하셔야 합니다.
-                        </p>
+                        <p style="margin: 10px 0;"><img src = "/images/youtube.png" style="width: 30px; height: 30px;">  &#10095; <a href="https://youtu.be/Rjv7hnHkgXE?si=5CvWdtdKc0-gIJ-B">피지컬 갤러리 링크</a></p>
                     </div>
                 </div>
                
@@ -145,7 +152,7 @@
 
                 <div class="team-intro">
                     <div class="num-1">
-                        <p>
+                        <p class="p1">
                             조장
                         </p>
                         <img src="/images/new.png" class="team-img">
@@ -162,7 +169,7 @@
                     </div> 
 
                     <div class="num-2">
-                        <p>조원1</p>
+                        <p class="p1">조원</p>
                         <img src="/images/me.png" class="team-img">
                         <div>
                             <p>장은정</p>
@@ -177,7 +184,7 @@
                     </div>
 
                     <div class="num-3">
-                        <p>조원2</p>
+                        <p class="p1">조원</p>
                         <img src="/images/newminsuc.png" class="team-img">
                         <div>
                             <p>양민석</p>
@@ -199,6 +206,10 @@
                         </p>
                     </div>
                 </div>
+
+                <span id="btnGoTop">
+                    
+                </span>
             </div>
         </section>
 
@@ -206,8 +217,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="/jquery.fullPage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" integrity="sha512-0xW5KFMtT462F65vVvIejNawM1U2Fp/yhItmQVFUwdYP+R9tQFCn4QtLEhkp6RoGovZ6YCvbxy+GVCtGv0+nvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src = "/main_js.js"></script>
+    <script src ="/main_js.js"></script>
     <script src="/modal.js"></script>   
-    <!-- <script src= "/toggle.js"></script> -->
+    <script src= "/toggle.js"></script>
 </body>
 </html>

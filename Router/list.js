@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
-const { mysqlConfig } = require('../config_ngc');
+const { mysqlConfig } = require('../config');
 const connection = mysql.createConnection(mysqlConfig);
 const fs = require('fs');
 

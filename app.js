@@ -1,11 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const session = require('express-session');
+const session = require('express-session');
 const path = require('path');
 const {sessionConfig } = require('./config');
 const mqtt = require("mqtt");
 const client = mqtt.connect("mqtt://192.168.0.45");
-
 
 const mainrouter = require('./Router/main');
 const loginrouter = require('./Router/login');
@@ -16,14 +15,21 @@ const wr = require('./Router/write');
 const ed = require('./Router/edit');
 const del = require('./Router/delete');
 const vi = require('./Router/view');
-const mau = require('./Router/about')
 const service_set = require('./Router/service_set')
 const service = require('./Router/service')
+const about = require('./Router/about')
 
 
 const app = express();
 
-app.use(express.static('public'));
+
+// 뷰 엔진 설정
+app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'ejs');
+
+// MySQL 연결 설정
+
+app.use(express.static(path.join(__dirname, '/public')));
 // 세션 미들웨어 설정
 app.use(sessionConfig);
 
@@ -31,38 +37,26 @@ app.use(sessionConfig);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// 뷰 엔진 설정
-app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'ejs');
-
-// express 기능과 소켓 통신을 제공하는 http 서버 만들기
-const http = require("http");
-const server = http.createServer(app);
-const socket = require("socket.io");
-const sio = socket(server) ;
-let read_chair_data;
-
-
-
-
 // 라우터 설정
 //메인
-app.use('', mainrouter);
+app.use('/', mainrouter);
 //로그인
-app.use('', loginrouter);
+app.use('/', loginrouter);
 //회원가입
-app.use('', joinrouter);
+app.use('/', joinrouter);
 //로그아웃
-app.use('', logoutrouter);
+app.use('/', logoutrouter);
 //게시판 CRUD
-app.use('', li);
-app.use('', wr);
-app.use('', ed);
-app.use('', del);
-app.use('', vi);
-app.use('',service_set);
-app.use('',service);
-app.use('',mau);
+app.use('/', li);
+app.use('/', wr);
+app.use('/', ed);
+app.use('/', del);
+app.use('/', vi);
+app.use('/',service_set);
+app.use('/',service);
+app.use('/',about);
+
+let read_chair_data = '{"0": 0, "1": 15, "2": 0, "3": 114, "4": 6, "5": 120, "6": 130, "7": 140, "8": 150, "9": 160, "10": 0, "11": 170, "12": 0, "13": 180, "14": 0, "15": 200, "16": 0, "17": 180, "18": 0, "19": 170, "20": 0, "21": 150, "22": 140, "23": 130, "24": 100, "25": 80, "26": 0, "27": 0, "28": 0, "29": 0, "30": 0, "31": 0}';
 
 // 커넥트 이벤트 핸들링
 client.on("connect", () => { 
@@ -74,9 +68,10 @@ client.on("message", (_, message) => {
   read_chair_data = String(message)
   console.log(read_chair_data)
 })
+
 app.get("/test_value", (req, res) => {
   console.log(JSON.parse(read_chair_data))
-  res.send(read_chair_data)
+  res.send(JSON.parse(read_chair_data))
 })
 
 app.post("/test_value", (req, res) => {

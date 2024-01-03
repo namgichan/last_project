@@ -1,7 +1,7 @@
 const express = require('express')
 const mysql = require('mysql');
 const router = express.Router();
-const { mysqlConfig} = require('../config_ngc');
+const { mysqlConfig} = require('../config');
 const connection = mysql.createConnection(mysqlConfig)
 const crypto = require('crypto');
 const secret = 'MySecrekey1$1$234';
