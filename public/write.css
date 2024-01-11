@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 400vh;
+  margin: 0 auto;
+  background-image: radial-gradient(circle at 20% 100%, rgba(184, 184, 184, 0.1) 0%, rgba(184, 184, 184, 0.1) 33%, rgba(96, 96, 96, 0.1) 33%, rgba(96, 96, 96, 0.1) 66%, rgba(7, 7, 7, 0.1) 66%, rgba(7, 7, 7, 0.1) 99%), linear-gradient(40deg, #040a22, #2f323c, #7c7e87, #a9aab0);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: #f6f6f6;
+}
+
+header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  z-index: 900;
+  background: rgb(28, 27, 27);
+}
+header nav {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 34px;
+}
+header nav nav {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 34px;
+}
+header nav h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.bod {
+  text-align: center;
+  color: #f6f6f6;
+  font-size: 23px;
+  margin: 20px;
+}
+
+.postpart {
+  width: 70%;
+  margin: auto;
+  background-color: rgba(209, 209, 209, 0.6196078431);
+  border-radius: 18px;
+}
+
+form {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  height: 65vh;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f6f6f6;
+  margin-right: 21px;
+}
+
+.sub-title {
+  width: 70vh;
+  height: 3rem;
+  margin: 2%;
+  padding: 1%;
+}
+
+.form-control {
+  width: 70vh;
+  height: 20rem;
+  margin: 0 2%;
+  padding: 1%;
+}
+
+.con {
+  top: -280px;
+  position: relative;
+}
+
+.btn {
+  width: 7rem;
+  height: 3rem;
+  margin: 3% auto;
+  border: none;
+  border-radius: 12px;
+  background-color: #555555;
+  color: #f6f6f6;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #f6f6f6;
+  color: #4385ff;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: #4d4d4d;
+  color: #dfdfdf;
+}
+
+@media screen and (max-width: 780px) {
+  html {
+    min-width: 768px;
+  }
+  nav {
+    padding: 0;
+  }
+  .list {
+    margin-left: -1%;
+  }
+  .container {
+    margin-left: -1%;
+  }
+}/*# sourceMappingURL=write.css.map */

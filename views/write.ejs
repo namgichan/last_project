@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/write.css">
+  <title>글쓰기</title>
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1><a href="/">SSP</a></h1>
+      </div>
+    </nav>    
+  </header>
+
+  <div class="bod">
+    <h1 class="board">게시판</h1>
+  </div>
+
+  <div class="postpart">
+    <form method="post">
+
+      <div class="mb-2 mt-2">
+        <label>subject</label>
+      <input class = "sub-title" type="text" name="subject" placeholder="제목을 입력해 주세요." />
+      </div>
+          
+
+      <div class="mb-3 mt-3">
+        <label class="con">content</label>
+        <textarea class="form-control" rows="10" id="content" name="content" placeholder="내용을 입력해 주세요."></textarea>
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

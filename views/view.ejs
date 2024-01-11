@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>편집</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/354885cafc.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script> -->
+    <link rel = "stylesheet" href="/view.css"> 
+</head>
+<body>
+  <header>
+    <nav clas="nav-bar">
+      <div class="logo">
+          <h1> <a href="/">SSP</a></h1>
+      </div>
+    </nav>
+  </header>
+
+  <div class="view">
+    <h1>게시글</h1>
+  </div>
+
+<br>
+<div class="container">
+  <div class="co-head">
+    <div class="wrap">
+      <% data.forEach(function (item, index) { %>
+      <a href = "/list/<%= (item.num - 1)/5 + 1 %>">이전으로</a>
+      <a href="/list/1">게시판</a>
+    </div>  
+      
+    <div class="pre">
+      <a href="/delete/<%= item.num%>">삭제</a>
+      <a href="/edit/<%= item.num %>">편집</a>
+    </div>
+  </div>
+<!-- 
+  <br>
+  <br> -->
+    <div class="content">
+        <p class = "in-number"> 글 번호 : <%= item.num %></p>
+        <br>
+                  <p class="in-th">
+          작성자 : <%= item.author %>
+        </p>
+        <br>
+        <p class="in-ti">
+          제목 : <%= item.subject %>
+        </p>          
+        <br>
+        <p class ="in-content">
+          <%= item.content %>
+        </p>
+
+    </div>
+      <% }); %>
+  
+</div>
+</body>
+</html>

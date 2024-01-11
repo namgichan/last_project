@@ -1,0 +1,124 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 400vh;
+  margin: 0 auto;
+  background-image: radial-gradient(circle at 20% 100%, rgba(184, 184, 184, 0.1) 0%, rgba(184, 184, 184, 0.1) 33%, rgba(96, 96, 96, 0.1) 33%, rgba(96, 96, 96, 0.1) 66%, rgba(7, 7, 7, 0.1) 66%, rgba(7, 7, 7, 0.1) 99%), linear-gradient(40deg, #040a22, #2f323c, #7c7e87, #a9aab0);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: #f6f6f6;
+}
+
+header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background: rgb(28, 27, 27);
+}
+header nav {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 34px;
+}
+header h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.mid-title {
+  text-align: center;
+  color: #f6f6f6;
+  font-size: 23px;
+  margin: 20px;
+}
+
+.midBtn {
+  display: flex;
+  position: relative;
+  right: 20%;
+  justify-content: right;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  gap: 9px;
+}
+.midBtn a {
+  display: flex;
+  width: 5rem;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  background-color: #fff;
+  color: rgb(7, 7, 7);
+  border-radius: 8px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100vh;
+  height: 57vh;
+  background-color: #fff;
+  padding: 50px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.container .subBtn {
+  width: 110px;
+  height: 60px;
+  border: none;
+  border-radius: 14px;
+  background-color: #313131;
+  color: #f6f6f6;
+  margin: 5px;
+}
+.container .subBtn:hover {
+  color: #313131;
+  background-color: #f6f6f6;
+}
+.container .author,
+.container .title,
+.container .content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 0 45px;
+  margin-bottom: 10px;
+}
+.container label {
+  margin-bottom: 5px; /* label과 input 사이의 간격 조절 */
+}
+.container #content {
+  margin: 0 auto;
+  width: 81vh;
+  height: 25vh;
+  padding: 18px;
+  border-radius: 6px;
+  resize: none;
+}
+
+input {
+  height: 2rem;
+  border-radius: 6px;
+  padding: 1%;
+}/*# sourceMappingURL=edit.css.map */

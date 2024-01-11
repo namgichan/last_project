@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈</title>
+    <link rel = "stylesheet" href="/main.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>
+    <script src="https://kit.fontawesome.com/537c75a3f7.js" crossorigin="anonymous"></script>
+</head> 
+<body> 
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1><a href="/">SSP</a></h1>
+            </div>
+      
+            <ul class="menu_bar">
+                <li><a href="/service_set">Service start</a></li>
+                <li><a href="/list/1">게시판</a></li>
+            </ul>
+            
+            <ul class = "when-logout"> 
+            <% if(is_logined == false){ %>
+                <li><a href="/login">
+                    <img src="/images/user.png"><br>
+                    login
+                </a></li>
+                <!-- <li><a href="/join">
+                    
+                </a></li>   -->
+            <% }else{ %>
+                <!-- <li style="color: white;"><%= name %> 님 환영합니다!</li> -->
+                <li><a href="/login"><img src="/images/user.png" alt=""></a></li>
+                <li><a href="/logout">logout</a></li>
+            </ul>
+            <% } %>
+            
+            <%# 이게 주석 처리였음%> 
+        </nav>
+    </header>
+
+
+    <section>
+        <div class="page1-content">
+            <h1 class="project">
+                SMART <br> SIT <br> PROJECT
+            </h1>
+            <p>
+                당신의 코어와 척추를 위한 다정한 선택
+            </p>
+
+            <span><button class="page1-morebtn" id = "myBtn"><span>more</span></button></span>
+        </div>
+
+        <div id="myModal" class="moremodal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="closeBtn">❌</span>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        이 프로젝트는 자세 교정을 위해 기안되었습니다. <br>
+                        웹 캠을 통해 자신의 자세를 확인하고 의자 센서를 통하여 <br>
+                        교정하고, 올바른 척추를 만들기 위하여 당신을 움직이게 합니다. <br>
+                        <br>
+                        웹캠 센서는 당신이 처음 보여준 자세와 의자 센서를 기본 정보로<br>
+                        어느 방향으로 무게가 가해지는지, 웹캠으로 보여지는 영상이 어떤 모습이<br>
+                        되는지 확인하실 수 있습니다. 
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        로그인 후에 상단의 <span><a class="set" href="service_set">Service start</a></span>을 눌러 서비스를 이용해 보시길 바랍니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+       <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/images/books.jpg" alt="">
+                <div class="overay"></div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/ladies.jpg" alt="">
+                <div class="overay"></div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/daria.jpg" alt="">
+                <div class="overay"></div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/musician.jpg" alt="">
+                <div class="overay"></div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/yoga1.jpg" alt="">
+                <div class="overay"></div>
+            </div>
+        </div>
+       </div>
+    </section>
+
+
+    <section>
+        <div class="backbone">
+            <img src="/images/pngwing.png" alt="">
+        </div>
+        <div class="page2-content">
+            <h2>
+                YOU CAN SEE <br> YOUR POSE, <br>
+                YOU CAN CHECK <br> YOUR POSE.
+            </h2>
+        </div>
+    </section>
+
+    <section>
+        <div class="make">
+            <p>
+                구부정한 현대인의 자세를 <br>
+                조금이나마 도와줄 친구를 <br>
+                소개합니다.<br>
+                <br>
+                거북목, 디스크, <br>
+                비틀어진 골반의 완화를 <br>
+                도와드립니다!
+            </p>
+        </div>
+        <div>
+            <div class="mid-container">
+                <div class="longimg">
+                    <img src="/images/seat_person.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="page3-content">
+            <h2>CHECK YOUR <br> POSITION</h2>
+
+            <p>
+                <strong>사용법</strong> <br>
+                <br>
+                의자에 앉아 정면을 바라보시고, <br>
+                웹캠을 응시하셔야 합니다. <br>
+                그 후에 현 자세를 촬영하시고 <br>
+                시작을 눌러 센서가 당신의 중심을 <br>
+                측정할 수 있게 해주세요.
+                <br>
+            </p>
+            <p style="margin: 10px 0;"><img src = "/images/youtube.png" style="width: 30px; height: 30px;">  <a href="https://youtu.be/Rjv7hnHkgXE?si=5CvWdtdKc0-gIJ-B"> &#10095; 피지컬 갤러리 링크</a></a></p>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="num-1">
+            <p class="p1">
+                조장
+            </p>
+            <img src="/images/new.png" class="team-img">
+            <div>
+                <p>남기찬</p>
+            <p class="in">
+                <span>contact</span> <br>
+                <span class="-c-ph">phone</span> <br>
+                010-7109-6107 <br>
+                <span class="-c-em">email</span> <br>
+                ngc0328@gmail.com <br>
+            </p>
+            </div>
+        </div> 
+
+        <div class="num-2">
+            <p class="p1">조원</p>
+            <img src="/images/kaaa.png" class="team-img">
+            <div>
+                <p>장은정</p>
+            <p class="in">
+                <span>contact</span> <br>
+                <span class="-c-ph">phone</span> <br>
+                010-9110-1443 <br>
+                <span class="-c-em">email</span> <br>
+                tkell3210@gmail.com <br>
+            </p>
+            </div>
+        </div>
+
+        <div class="num-3">
+            <p class="p1">조원</p>
+            <img src="/images/newminsuc.png" class="team-img">
+            <div>
+                <p>양민석</p>
+            <p class="in">
+                <span>contact</span> <br>
+                <span class="-c-ph">phone</span> <br>
+                010-8520-7664<br>
+                <span class="-c-em">email</span> <br>
+                day5274@naver.com<br>
+            </p>
+            </div>
+        </div>
+    </section>
+
+    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+    <script src="/swipe.js"></script>
+    <!-- <script src ="/main_js.js"></script> -->
+    <script src="/modal.js"></script>   
+    <script src= "/toggle.js"></script>
+</body>
+</html>

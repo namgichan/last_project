@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/354885cafc.js" crossorigin="anonymous"></script>
+    <link rel = "stylesheet" href="login.css">
+    <script src="loginform.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav clas="nav-bar">
+            <div class="logo">
+                <h1><a href="/">SSP</a></h1>
+            </div>
+            <!-- <ul class="menu_bar">
+                <li><a href="/login">login</a></li>
+                <li><a href="/join">join</a></li>
+            </ul> -->
+        </nav>
+    </header>
+
+    <section class = "b-wrap">
+        <div id = "box" class="container_form">
+            <h1>LOGIN</h1>
+          <form action="/login" method="post">
+            <p><input class="login" type="text" name="id" placeholder="아이디"></p>
+            <p><input class="login" type="password" name="password" placeholder="비밀번호"></p>
+            <p><input class="btn" type="submit" value="로그인"></p>
+          </form>
+          <span></span>
+          <p class = "joinus">아직 아이디가 없으신가요? <a href = "join" class = "a">회원가입</a></p>
+        </div>
+    </section>
+
+
+</body>
+</html>     

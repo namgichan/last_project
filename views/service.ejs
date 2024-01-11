@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/service.css">
+  <title>SERVICE</title>
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1><a href="/">SSP</a></h1>
+      </div>
+
+      <ul class="menu_bar">
+        <li><a href="/list/1">게시판</a></li>
+        <li><a href="/service_set">이전으로</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="select">
+      <h2>당신의 자세</h2>
+    </div>
+    <div class = "webcam">
+      <img class = "webser" src="http://localhost:8000/service" width="500" />
+       
+      <div class="sensormonitor">
+
+        
+      <h2>센서 수치</h2>
+      <div class="first">
+        <table class="firstline">
+          <tr>
+            <thead>
+              <tr>
+                <th>10</th>
+                <th>12</th>
+                <th>14</th>
+                <th></th>
+                <th>16</th>
+                <th>18</th>
+                <th>20</th>
+              </tr>
+            </thead>
+            <td id="sensor10"></td>
+            <td id="sensor12"></td>
+            <td id="sensor14"></td>
+            <td></td>
+            <td id="sensor16"></td>
+            <td id="sensor18"></td>
+            <td id="sensor20"></td>
+          </tr>
+      </table></div>
+      <br>
+      <br>
+      <div class="second">
+        <table class="secondline">
+          <thead>
+            <tr>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>11</th>
+              <th>13</th>
+              <th>15</th>
+              <th>17</th>
+              <th>19</th>
+              <th>21</th>
+              <th>22</th>
+              <th>23</th>
+              <th>24</th>
+              <th>25</th>
+            </tr>
+          </thead>
+          <tr>
+            <td id="sensor5"></td>
+            <td id="sensor6"></td>
+            <td id="sensor7"></td>
+            <td id="sensor8"></td>
+            <td id="sensor9"></td>
+            <td id="sensor11"></td>
+            <td id="sensor13"></td>
+            <td id="sensor15"></td>
+            <td id="sensor17"></td>
+            <td id="sensor19"></td>
+            <td id="sensor21"></td>
+            <td id="sensor22"></td>
+            <td id="sensor23"></td>
+            <td id="sensor24"></td>
+            <td id="sensor25"></td>
+          </tr>
+      </table>
+      </div>
+      
+      <br>
+      <br>
+      <div class="third">
+        <table class="thirdline">
+          <thead>
+            <tr>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th></th>
+              <th></th>
+              <th>26</th>
+              <th>27</th>
+              <th>28</th>
+              <th>29</th>
+              <th>30</th>
+            </tr>
+          </thead>
+          <tr>
+            <td id="sensor0"></td>
+            <td id="sensor1"></td>
+            <td id="sensor2"></td>
+            <td id="sensor3"></td>
+            <td id="sensor4"></td>
+            <td></td>
+            <td></td>
+            <td id="sensor26"></td>
+            <td id="sensor27"></td>
+            <td id="sensor28"></td>
+            <td id="sensor29"></td>
+            <td id="sensor30"></td>
+          </tr>
+        </table> 
+      </div>
+       
+    </div>
+    </div>
+  </div>
+  <div class="update_Image">
+    <img id="seat_Image" src="/images/seat_normal.jpg" alt="Image" width="300">
+  </div>
+  <script src="/service_set_js.js"></script>
+  <script src="/service_func.js"></script>
+</body>
+</html>

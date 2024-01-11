@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="/list.css">
+  <title>게시판</title>
+</head>
+<body>
+
+  <%
+  var curSet = list.curSet;
+  var endPage = list.endPage;
+  var startPage = list.startPage;
+  var totalSet = list.totalSet;
+  var totalPage = list.totalPage;
+  var page_list_size = list.page_list_size;
+  var page_size = list.page_size;
+  var curPage = list.curPage;
+  %>
+
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1> <a href="/">SSP</a></h1>
+      </div>
+
+      <ul class = "menu_bar">
+        <li><a href="/service_set">Service</a></li>
+        <li><a href="/list/1">게시판</a></li>
+        <li><a href="#"></a></li>
+        <!-- <li><a href="/logout">로그아웃</a></li> -->
+      </ul>
+
+      <button class = "write">
+        <a href="/write" class="writeBtn">글쓰기</a> 
+      </button>
+
+    </nav>
+  </header>
+
+  <div class="list">
+    <h1 class="board">게시판</h1>
+  </div>
+
+  <div class="container">
+    <div class="wrap">
+      <table border="1">
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+        </tr>
+        <% data.forEach(function (item, index) { %>
+        <tr>
+          <td><%= item.num %></td>
+          <td><a href="/view/<%= item.num %>"><%= item.subject %></a></td>
+          <td><%= item.author %></td>
+        </tr>
+        <% }); %>
+      </table>
+
+      <br>
+      <br>
+      
+      <div class="container-mid">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+          <% if(curPage > 1){ %>
+            <li class="page-item-previous">
+              <a class="page-link" href="/list/<%= (curPage - 1) %>" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <% } 
+             else 
+            { %>
+              <li class="page-item-previous">
+                <a class="page-link" href="/list/<%= (curPage) %>" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+            <%  }%>
+          
+        
+          <li class="page-item-disabled"></li>
+          <% for(var i = startPage; i <= endPage; i++){ %>
+            <% if(i > totalPage) { break; } %>
+            <% if(i == curPage){ %>
+              <li class="page-item">
+                <a class="page-link" href="/list/<%= i %>"><%= i %></a>
+              </li>
+            <% } else { %>
+              <li class="page-item active">
+                <a class="page-link" href="/list/<%= i %>"><%= i %></a>
+              </li>
+            <% } %>  
+          <% } %>
+          <% if(curPage < totalPage){ %>
+            
+            <li class="page-item-next">
+              <a class="page-link" href="/list/<%= curPage + 1 %>">Next</a>
+            </li>
+          <% } 
+          else{%>
+            <li class="page-item-next">
+              <a class="page-link" href="/list/<%= curPage%>">Next</a>
+            </li>
+            <%  }
+          %>
+          </ul>
+        </nav>
+      </div>
+      <br>
+      <br>
+      
+    </div>
+  </div>
+</body>
+</html>

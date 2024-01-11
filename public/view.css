@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 400vh;
+  margin: 0 auto;
+  background-image: radial-gradient(circle at 20% 100%, rgba(184, 184, 184, 0.1) 0%, rgba(184, 184, 184, 0.1) 33%, rgba(96, 96, 96, 0.1) 33%, rgba(96, 96, 96, 0.1) 66%, rgba(7, 7, 7, 0.1) 66%, rgba(7, 7, 7, 0.1) 99%), linear-gradient(40deg, #040a22, #2f323c, #7c7e87, #a9aab0);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: #f6f6f6;
+}
+
+header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background: rgb(28, 27, 27);
+}
+header nav {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 34px;
+}
+header h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.view {
+  text-align: center;
+  color: #f6f6f6;
+  font-size: 23px;
+}
+.view h1 {
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.container .co-head {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56vh;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  margin-left: 20px;
+  gap: 10px;
+}
+.wrap a {
+  display: flex;
+  width: 5rem;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  background-color: #fff;
+  color: rgb(7, 7, 7);
+  border-radius: 8px;
+}
+
+.pre {
+  display: flex;
+  text-align: center;
+  padding: 7px;
+  height: 42px;
+  position: relative;
+}
+.pre a {
+  color: rgb(7, 7, 7);
+  padding: 2px;
+  display: flex;
+  border: none;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  justify-content: center;
+  gap: 20px;
+  width: 50px;
+  margin-left: 7px;
+}
+
+.content {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 58px;
+  border: none;
+  background: #fff;
+  border-radius: 8px;
+  width: 800px;
+  height: 50vh;
+}
+.content .in-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(22, 22, 22, 0.3333333333);
+  border-radius: 8px;
+  padding: 16px;
+}/*# sourceMappingURL=view.css.map */

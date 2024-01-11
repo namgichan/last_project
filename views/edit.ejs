@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel = "stylesheet" href = "/edit.css">
+  <title>편집하기</title>
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+          <h1> <a href="/">SSP</a></h1>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mid-title">
+    <h1>편집 </h1>
+  </div>
+
+  <div class="midBtn">
+    <a style="cursor: pointer;" onclick="history.back();">이전으로</a>
+  </div>
+
+  <form method="post">
+    <div class="container">
+
+      <div class = "author">
+        <label>작성자</label>
+        <input type="text" name="author" value="<%= data.author %>" disabled/>
+      </div>
+
+      <div class="title">
+        <label>제목</label>
+        <input type="text" id = "title" name="subject" value="<%= data.subject %>" />
+      </div>
+
+      <div class="content">
+        <label>내용</label>
+      
+      
+        <textarea id="content" name="content"><%= data.content %></textarea>
+      
+      
+      </div>
+      <input class = "subBtn" type="submit" value="Submit" />
+    </div>
+
+  </form>
+
+</body>
+</html>

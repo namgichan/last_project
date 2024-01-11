@@ -1,0 +1,199 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 400vh;
+  margin: 0 auto;
+  background-image: radial-gradient(circle at 20% 100%, rgba(184, 184, 184, 0.1) 0%, rgba(184, 184, 184, 0.1) 33%, rgba(96, 96, 96, 0.1) 33%, rgba(96, 96, 96, 0.1) 66%, rgba(7, 7, 7, 0.1) 66%, rgba(7, 7, 7, 0.1) 99%), linear-gradient(40deg, #040a22, #2f323c, #7c7e87, #a9aab0);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #f6f6f6;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  z-index: 900;
+  background: rgb(28, 27, 27);
+}
+header nav {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 59% 15% 6%;
+  justify-content: space-between;
+  padding: 20px 34px;
+}
+header nav h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+header .menu_bar {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: start;
+  justify-content: space-between;
+  margin: 0 32px;
+}
+header .write {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+  border: none;
+  border-radius: 15px;
+}
+header .write a {
+  color: #555555;
+}
+header .writeBtn:hover {
+  color: #f6f6f6;
+  border-color: #242424 !important;
+}
+
+.list {
+  position: relative;
+  top: 12px;
+}
+.list h1 {
+  text-align: center;
+  margin: 3rem auto;
+  color: #f6f6f6;
+}
+
+.container {
+  width: 100%;
+  height: 67vh;
+  margin: 3rem auto;
+  border: none;
+  border-radius: 3px;
+  display: flex; /* 가운데 정렬을 위해 flex 추가 */
+  justify-content: center;
+}
+
+.wrap {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+}
+.wrap table {
+  border-collapse: collapse;
+  margin: 0rem auto;
+  background-color: white;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.wrap th {
+  background-color: #999999;
+}
+.wrap th, .wrap td {
+  border-left: none;
+  border-right: none;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.wrap td a {
+  color: #555555;
+}
+
+/* 테이블 비율 */
+th:nth-child(1),
+td:nth-child(1) {
+  width: 15%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 55%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 30%;
+}
+
+.page-link {
+  color: #f6f6f6;
+  border: none;
+  background-color: #555555;
+}
+
+.nav-bar .menu_bar a:hover,
+.pagination a.page-link:hover {
+  color: #f6f6f6;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.logo a:hover {
+  color: #f6f6f6;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #ece7e7; /* 원하는 배경 색상으로 변경 */
+  border-color: #555555; /* 원하는 테두리 색상으로 변경 */
+  color: #383333; /* 텍스트 색상을 밝은 색으로 변경 */
+}
+
+.container-mid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.container-mid nav {
+  display: grid;
+}
+.container-mid ul {
+  list-style: none;
+  display: flex;
+  border-radius: 12px;
+}
+.container-mid a {
+  border: 1px solid rgb(128, 128, 128);
+  display: grid;
+  height: 31px;
+  align-items: center;
+  border-radius: 8px;
+}
+.container-mid .page-item-previous {
+  width: 90px;
+  height: 50px;
+}
+.container-mid .page-item-next {
+  width: 60px;
+}
+.container-mid .page-item {
+  width: 2em;
+}
+
+@media screen and (max-width: 780px) {
+  html {
+    min-width: 680px;
+    padding: 2rem;
+  }
+  .container {
+    margin: 0;
+  }
+}/*# sourceMappingURL=list.css.map */

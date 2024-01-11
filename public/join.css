@@ -1,0 +1,149 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html div {
+  display: inline-block;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 400vh;
+  margin: 0 auto;
+  position: relative;
+}
+body h1 {
+  text-align: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+body p {
+  margin: 10px;
+  font-size: 15px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./images/daniel-mccullough-80VTQEkRh1c-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.8; /* 투명도 조절 */
+  z-index: -2; /* 배경 이미지를 content 뒤로 이동시켜 다른 요소들이 가려지지 않도록 함 */
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background: rgb(28, 27, 27);
+}
+header nav {
+  padding: 20px 34px;
+  color: #f6f6f6;
+}
+header nav h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+header nav .menu_bar {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin-top: 4%;
+}
+header nav .menu_bar li {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #f6f6f6;
+}
+
+.b-wrap {
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 550px;
+  min-width: 330px;
+  height: 65vh;
+  display: flex;
+  position: relative;
+  top: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: auto; /*중앙 정렬을 위해 추가*/
+}
+.b-wrap form {
+  justify-content: center;
+  align-items: center;
+}
+.b-wrap h1 {
+  font-size: 50px;
+  margin-top: -50px;
+  margin-bottom: 70px;
+}
+.b-wrap .btn {
+  border: none;
+  border-radius: 16px;
+  background-color: rgb(158, 158, 158);
+  box-shadow: 2px 2px 2px 2px #626262;
+  font-weight: bold;
+  color: whitesmoke;
+  font-size: 15px;
+  width: 130px;
+  height: 2rem;
+  justify-content: center;
+  margin-top: 15px;
+  margin-left: 35px;
+  align-items: center;
+  cursor: pointer;
+}
+.b-wrap .btn:hover {
+  color: #726767;
+  background-color: #f6f6f6;
+}
+.b-wrap .btn:active {
+  color: #756f6f;
+  background-color: #9d9595;
+}
+.b-wrap .login {
+  margin-left: 17px;
+  width: 180px;
+  height: 28px;
+}
+.b-wrap .joinus {
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+}
+.b-wrap .sign-in {
+  text-decoration: none;
+  margin-top: 30px;
+}
+.b-wrap .a {
+  text-decoration: none;
+  color: #2e2c2c;
+}
+
+@media screen and (max-width: 780px) {
+  .b-wrap {
+    height: 58vh; /* 변경된 부분 */
+    margin-top: 10px; /* 변경된 부분 */
+    margin-bottom: 10px; /* 변경된 부분 */
+  }
+  .b-wrap h1 {
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
+/* @supports (display: ;) *//*# sourceMappingURL=join.css.map */
